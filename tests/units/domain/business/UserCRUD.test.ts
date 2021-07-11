@@ -1,5 +1,5 @@
-import { UserRepositoryMemory } from '../../../src/app/repositories';
-import { UserCRUD } from '../../../src/domain/business';
+import { UserRepositoryMemory } from '../../../../src/app/repositories';
+import { UserCRUD } from '../../../../src/domain/business';
 
 describe('Domain - Business - UserCRUD', () => {
   test('no user should be found', async () => {

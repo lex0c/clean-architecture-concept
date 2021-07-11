@@ -1,4 +1,4 @@
-import { UserEntity } from '../../../src/domain/entities';
+import { UserEntity } from '../../../../src/domain/entities';
 
 describe('Domain - Entity - User', () => {
   test('build valid user instance without ID', () => {
