@@ -1,6 +1,6 @@
 import Joi from 'joi';
 
-export default class JoiValidatorAdapter {
+export default class ValidatorWrapper {
   public static number(value: number) {
     return (Joi.number().validate(value)).error;
   }
