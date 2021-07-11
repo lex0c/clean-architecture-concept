@@ -17,7 +17,7 @@ describe('Domain - Business - UserCRUD', () => {
 
     const payload = {
       name: 'foo bar',
-      email: 'foo@bar.com.br',
+      email: 'foo@bar.com',
     };
 
     const id = await userCRUD.create({ ...payload, password: 'pass123' });
