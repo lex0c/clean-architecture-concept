@@ -24,4 +24,8 @@ export default class UserCRUD {
 
     return this.repository.create(payload);
   }
+
+  public async removeById(id: number): Promise<number> {
+    return this.repository.remove(id);
+  }
 }

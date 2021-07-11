@@ -22,4 +22,16 @@ export default class UserRepositoryMemory implements UserRepositoryInterface {
 
     return id;
   }
+
+  public async remove(id: number): Promise<number> {
+    const index = this.users.findIndex(user => user.id === id);
+
+    if (index === -1) return -1;
+
+    const removedId = this.users[index]?.id;
+
+    this.users.splice(index, 1);
+
+    return removedId || -1;
+  }
 }

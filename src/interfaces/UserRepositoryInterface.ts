@@ -4,4 +4,5 @@ export default interface UserRepositoryInterface {
   get(id: number): Promise<UserEntity | undefined>;
   getAll(): Promise<UserEntity[]>;
   create(user: UserEntity): Promise<number>;
+  remove(id: number): Promise<number>;
 }
