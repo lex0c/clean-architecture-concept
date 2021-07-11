@@ -1,4 +1,4 @@
-import { JoiValidatorAdapter } from '../../adapters';
+import { ValidatorWrapper } from '../../wrappers';
 
 export default class UserEntity {
   public readonly id?: number;
@@ -12,10 +12,10 @@ export default class UserEntity {
     email?: string,
     password?: string,
   ) {
-    const idValidateError = id ? JoiValidatorAdapter.number(id) : false;
-    const nameValidateError = name ? JoiValidatorAdapter.text(name) : false;
-    const emailValidateError = email ? JoiValidatorAdapter.email(email) : false;
-    const passwordValidateError = password ? JoiValidatorAdapter.password(password) : false;
+    const idValidateError = id ? ValidatorWrapper.number(id) : false;
+    const nameValidateError = name ? ValidatorWrapper.text(name) : false;
+    const emailValidateError = email ? ValidatorWrapper.email(email) : false;
+    const passwordValidateError = password ? ValidatorWrapper.password(password) : false;
 
     const error = idValidateError
       || nameValidateError

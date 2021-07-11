@@ -1,6 +1,6 @@
 import { UserRepositoryInterface } from '../../interfaces';
 import { UserEntity } from '../entities';
-import { HashAdapter } from '../../adapters';
+import { HashWrapper } from '../../wrappers';
 
 export default class UserCRUD {
   constructor(
@@ -19,7 +19,7 @@ export default class UserCRUD {
     const payload: any = {
       name: user.name,
       email: user.email,
-      password: HashAdapter.build(user?.password),
+      password: HashWrapper.build(user?.password),
     };
 
     return this.repository.create(payload);
