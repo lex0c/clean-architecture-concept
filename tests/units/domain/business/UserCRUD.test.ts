@@ -1,7 +1,7 @@
 import { UserRepositoryMemory } from '../../../../src/app/repositories';
 import { UserCRUD } from '../../../../src/domain/business';
 
-describe('Domain - Business - UserCRUD', () => {
+describe('Domain - Business - UserCRUD (Unit Test)', () => {
   test('no user should be found', async () => {
     const userCRUD = new UserCRUD(new UserRepositoryMemory());
     expect(await userCRUD.getAll()).toHaveLength(0);
@@ -12,7 +12,7 @@ describe('Domain - Business - UserCRUD', () => {
     expect(await userCRUD.getById(1)).toBeUndefined();
   });
 
-  test('create new user', async () => {
+  test('create new user', async (done) => {
     const userCRUD = new UserCRUD(new UserRepositoryMemory());
 
     const payload = {
@@ -27,6 +27,8 @@ describe('Domain - Business - UserCRUD', () => {
     expect(await userCRUD.getAll()).toHaveLength(1);
     expect(userFound).toMatchObject(payload);
     expect(userFound?.password).toEqual(expect.not.stringContaining('pass123'));
+
+    done();
   });
 
   test('delete user by ID', async () => {
