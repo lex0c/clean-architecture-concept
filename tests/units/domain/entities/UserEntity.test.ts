@@ -1,6 +1,6 @@
 import { UserEntity } from '../../../../src/domain/entities';
 
-describe('Domain - Entity - User', () => {
+describe('Domain - Entity - User (Unit Test)', () => {
   test('build valid user instance without ID', () => {
     const payload = {
       name: 'foo bar',
