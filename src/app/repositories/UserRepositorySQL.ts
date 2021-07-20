@@ -10,7 +10,7 @@ export default class UserRepositorySQL implements UserRepositoryInterface {
   public async get(id: number): Promise<UserEntity | undefined> {
     const result = await db('users').select('id', 'name', 'email').where({ id });
 
-    return result[0] || -1;
+    return result[0] || undefined;
   }
 
   public async getAll(): Promise<UserEntity[]> {
